@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kantor</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+        integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+        crossorigin="anonymous" />
+    <link href="css/style.css" rel="stylesheet">
+    <script defer src="js/script.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <form class="form js-form">
+            <fieldset>
+                <legend class="form__legend">Kantor walut</legend>
+                <p>
+                    <label>
+                        <span class="form__labelText">
+                            Kwota w PLN
+                        </span>
+                        <input class="form__field js-amount" type="number" name="amount" autofocus required>
+                    </label>
+                </p>
+                <p>
+                    <label>
+                        <span class="form__labelText">
+                            Przelicz na
+                        </span>
+                    </label>
+
+                    <select class="form__field js-currency" name="currency_from" list="currencies">
+                        <datalist id="currencies">
+                            <option class="ratePLN" value="PLN">PLN (złoty)</option>
+                            <option class="rateEUR" value="EUR" selected>EUR (euro)</option>
+                            <option class="rateUSD" value="USD">USD (dolar amerykański) </option>
+                            <option class="rateGBP" value="GBP">GBP (funt szterling)</option>
+                            <option class="rateCHF" value="CHF">CHF (frank szwajcarski)</option>
+                        </datalist>
+                    </select>
+                    </label>
+                </p>
+
+
+            </fieldset>
+            <p>
+                <button class="form__button js-submit">Przelicz!</button>
+            </p>
+            <fieldset>
+                <legend class="form__legend"> Rezultat:
+                </legend>
+                <p class="js-result"></p>
+            </fieldset>
+        </form>
+    </div>
+
+    <section class="tableContainer">
+        <table class="table">
+            <caption class="tableCaption">Kurs z 20 kwietnia 2021 r. </caption>
+            <tr class="tableRow">
+                <th class="tableCell tableHeader">Waluta</th>
+                <th class="tableCell tableHeader">Średni kurs</th>
+            </tr>
+            <tr class="tableRow">
+                <td class="tableCell">1 EUR</td>
+                <td class="tableCell">4,5541</td>
+            </tr>
+            <tr class="tableRow">
+                <td class="tableCell">1 USD</td>
+                <td class="tableCell">3,7737</td>
+            </tr>
+            <tr class="tableRow">
+                <td class="tableCell">1 GBP</td>
+                <td class="tableCell">5,2755</td>
+            </tr>
+            <tr class="tableRow">
+                <td class="tableCell">CHF</td>
+                <td class="tableCell">4,1257</td>
+            </tr>
+        </table>
+    </section>
+
+</body>
+
+</html>
