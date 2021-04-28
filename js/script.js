@@ -31,7 +31,7 @@ formElement.addEventListener("submit", (event) => {
             result = amount / rateCHF;
             break;
     }
-    resultElement.innerHTML = `${amount} PLN = ${result.toFixed(3)} ${currency}`;
+    resultElement.innerHTML = `${amount} PLN = ${result.toFixed(2)} ${currency}`;
 });
 
 
