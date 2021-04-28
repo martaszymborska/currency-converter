@@ -1,6 +1,5 @@
 html {
     box-sizing: border-box;
-    max-width: 1000px;
     margin: auto;
 }
 
@@ -11,9 +10,10 @@ html {
 .container {
     font-family: 'Lato', sans-serif;
     max-width: 800px;
-    margin: 20 auto;
+    margin:auto;
     padding: 40px;
     font-size: 20px;
+    position: center;
 }
 
 .form__labelText {
@@ -60,7 +60,7 @@ html {
 .tableContainer {
     overflow-x: auto;
     max-width: 800px;
-    margin: 20 auto;
+    margin: auto;
     padding: 40px;
 }
 
@@ -68,6 +68,7 @@ html {
     border-collapse: collapse;
     width: 100%;
     font-family: 'Lato', sans-serif;
+    border: #0f455f;
 }
 
 .tableCaption {
@@ -83,7 +84,7 @@ html {
 }
 
 .tableCell {
-    border: 1px solid #ccc;
+    border: 1px solid #0f455f;
     padding: 20px;
     text-align: center;
     vertical-align: middle;
