@@ -1,40 +1,41 @@
-let amountElement = document.querySelector(".js-amount");
-let currencyElement = document.querySelector(".js-currency");
-let resultElement = document.querySelector(".js-result");
-let formElement = document.querySelector(".js-form");
+{
+    const amountElement = document.querySelector(".js-amount");
+    const currencyElement = document.querySelector(".js-currency");
+    const resultElement = document.querySelector(".js-result");
+    const formElement = document.querySelector(".js-form");
 
-let rateEUR = 4.5541;
-let rateUSD = 3.7737;
-let rateGBP = 5.2755;
-let rateCHF = 4.1257;
+    const calculateResult = (amount, currency) => {
+        const rateEUR = 4.5541;
+        const rateUSD = 3.7737;
+        const rateGBP = 5.2755;
+        const rateCHF = 4.1257;
 
-formElement.addEventListener("submit", (event) => {
-    event.preventDefault();
+        switch (currency) {
+            case "EUR":
+                return amount / rateEUR;
 
-    let amount = +amountElement.value;
-    let currency = currencyElement.value;
+            case "USD":
+                return amount / rateUSD;
 
-    let result;
+            case "GBP":
+                return amount / rateGBP;
 
-    switch (currency) {
-        case "EUR":
-            result = amount / rateEUR;
-            break;
+            case "CHF":
+                return amount / rateCHF;
 
-        case "USD":
-            result = amount / rateUSD;
-            break;
-        case "GBP":
-            result = amount / rateGBP;
-            break;
-        case "CHF":
-            result = amount / rateCHF;
-            break;
-    }
-    resultElement.innerHTML = `${amount} PLN = ${result.toFixed(2)} ${currency}`;
-});
+        }
+    };
 
+    formElement.addEventListener("submit", (event) => {
+        event.preventDefault();
 
+        const amount = +amountElement.value;
+        const currency = currencyElement.value;
+
+        let result = calculateResult(amount, currency);
 
 
+        resultElement.innerHTML = `${amount} PLN = ${result.toFixed(2)} ${currency}`;
+    });
+}
 
